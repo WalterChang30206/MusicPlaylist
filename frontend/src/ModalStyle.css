@@ -1,0 +1,181 @@
+
+.modalHead {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    margin-left: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+
+}
+
+.modalBackground {
+    position: absolute;
+    background: lightgray;
+    height: 100%;
+    width: 100%;
+    opacity: 60%;
+}
+
+.modalContainer {
+    position: absolute;
+    height: 32%;
+    width: 30%;
+    margin-bottom: 5%;
+    border-style: solid;
+    border-width: 2px;
+    border-color: gray;
+    z-index:10;
+}
+
+.modalContainer_lib_del {
+    position: absolute;
+    height: 30%;
+    width: 30%;
+    margin-bottom: 5%;
+    border-style: solid;
+    z-index:10;
+}
+
+.modalContainer_background {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: gray;
+    opacity: 50%;
+    z-index: -5;
+}
+
+.modalContainer form {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    /* border-style: solid; */
+
+}
+
+.modal_title_upd {
+    position: absolute;
+    margin-top: 10%;
+    width: 100%;
+    /* border-style: solid; */
+    font-size: 28px;
+    color: yellow;
+    display: flex;
+    justify-content: center;
+}
+
+.modal_title_del_box {
+    position: absolute;
+    height: 40%;
+    width: 100%;
+    margin-top: 10%;
+    margin-left: 0%;
+    /* border-style: solid; */
+    font-size: 28px;
+    color: yellow;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.modal_title_del_box div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    /* border-style: solid; */
+}
+
+.modal_deleted_lib {
+    color: white;
+}
+
+.modal_deleted_music {
+    color: white;
+}
+
+.modal_title_add {
+    position: absolute;
+    margin-top: 10%;
+    width: 100%;
+    /* border-style: solid; */
+    font-size: 28px;
+    color: yellow;
+    display: flex;
+    justify-content: center;
+}
+
+.modal_title_url {
+    position: absolute;
+    margin-top: 10%;
+    margin-left: 40%;
+    /* border-style: solid; */
+    font-size: 28px;
+    color: yellow;
+}
+
+.modalContainer input {
+    position: absolute;
+    margin-top: 20%;
+    margin-left: 15%;
+    background: rgb(120, 120, 120);
+    width: 70%;
+    color: white;
+}
+
+.modalContainer button {
+    position: absolute;
+}
+
+.yes_box {
+    position: absolute;
+    height: 10%;
+    width: 30%;
+    margin-left: 10%;
+    margin-top: 30%;
+    border-style: solid;
+    border-color:deepskyblue;
+    background: rgb(120, 120, 120);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.yes_box button {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    opacity: 0%;
+}
+
+.yes_box:hover {
+    opacity: 60%;
+    transition-duration: 0.1s;
+}
+
+.no_box {
+    position: absolute;
+    height: 10%;
+    width: 30%;
+    margin-left: 60%;
+    margin-top: 30%;
+    border-style: solid;
+    border-color:crimson;
+    background: rgb(120, 120, 120);
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.no_box:hover {
+    cursor: pointer;
+    opacity: 60%;
+    transition-duration: 0.1s;
+}

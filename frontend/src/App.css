@@ -1,0 +1,339 @@
+.lib_page {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.lib_page_big_box {
+    height: 90vh;
+    width: 90%;
+    /* border-style: solid; */
+    display: flex;
+}
+
+.lib_list_box {
+    height: 100%;
+    width: 35%;
+    border-style: solid;
+    border-color: lightgray;
+    border-width: 2px;
+}
+
+.lib_list_box_title {
+    height: 8%;
+    max-width: 100%;
+    /* border-style: solid; */
+    padding-left:4%;
+    display: flex;
+    align-items: center;
+    background-color: darkgrey;
+    color:aliceblue;
+}
+
+.lib_list_box_title h2 {
+    color: white;
+}
+
+.upd_lib_button_box {
+    height: 50px;
+    width: 50px;
+    margin-left: 49%;
+    border-style: solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.upd_lib_button_box:hover {
+    color: black;
+    background: white;
+    transition-duration: 0.7s;
+}
+
+.upd_lib_button_box button {
+    position: absolute;
+    height: 5%;
+    width: 2.5%;
+    z-index: 1;
+    opacity: 0%;
+}
+
+
+.del_lib_button_box {
+    height: 50px;
+    width: 50px;
+    margin-left: 2%;
+    border-style: solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.del_lib_button_box:hover {
+    color: black;
+    background: white;
+    transition-duration: 0.7s;
+}
+
+
+.del_lib_button_box button {
+    position: absolute;
+    height: 5%;
+    width: 2.5%;
+    z-index: 1;
+    opacity: 0%;
+}
+
+
+.add_lib_button_box {
+    height: 50px;
+    width: 50px;
+    margin-left: 2%;
+    border-style: solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.add_lib_button_box:hover {
+    color: black;
+    background: white;
+    transition-duration: 0.7s;
+}
+
+
+.add_lib_button_box button {
+    position: absolute;
+    height: 5%;
+    width: 2.5%;
+    z-index: 1;
+    opacity: 0%;
+}
+
+.lib_list_item {
+    margin-left: 2%;
+    margin-top: 2%;
+    height: 7%;
+    padding-left: 3%;
+    max-width: 96%;
+    cursor: pointer;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    font-size: 24px;
+    border-radius: 10px;
+    transition-duration: 0.2s;
+}
+
+.lib_list_item:focus {
+    background: lightgray;
+    font-size: 28px;
+}
+
+
+.lib_list_item:hover {
+    background: lightgray;
+    color: gray;
+}
+
+
+
+.playlist_box {
+    height: 100%;
+    width: 60%;
+    margin-left: 5%;
+    border-style: solid;
+    border-color: lightgray;
+    border-width: 2px;
+}
+
+.playlist_box_title {
+    height: 8%;
+    max-width: 100%;
+    /* border-style: solid; */
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    padding-left: 5%;
+    background-color: darkgrey;
+    color:white;
+    
+}
+
+.play_list_box_title_text {
+    height: 100%;
+    width: 70%;
+    max-width: 70%;
+    /* border-style: solid; */
+    display: flex;
+    align-items: center;
+
+}
+
+.add_music_button_box {
+    height: 50px;
+    width: 50px;
+    margin-left: 23%;
+    border-style: solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.add_music_button_box:hover {
+    color: black;
+    background: white;
+    transition-duration: 0.7s;
+}
+
+
+.add_music_button_box button {
+    position: absolute;
+    height: 5%;
+    width: 2.5%;
+    z-index: 1;
+    opacity: 0%;
+}
+
+.music_item_default_box {
+    position: relative;
+    margin-top: 30%;
+    height: 12%;
+    width: 100%;
+    /* border-style: solid; */
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.music_item_default_box div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.music_item {
+    position: relative;
+    height: 15%;
+    max-width: 96%;
+    padding-left: 3%;
+    margin-top: 1%;
+    margin-left: 2%;
+    /* border-style: solid; */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    transition-duration: 0.2s;
+}
+
+.music_item:hover {
+    background: lightgray;
+}
+
+/* this is controling the redirect botton layer */
+.link_to_video {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    margin-left: -3%;
+    opacity: 0%;
+    z-index: 1;
+}
+
+.music_item_thumb {
+    position: relative;
+    height: 108px;
+    width: 192px;
+    /* border-style: solid; */
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background: yellow; */
+}
+
+.music_item_thumb img {
+    position: absolute;
+    width: 192px;
+}
+
+.music_item_title {
+    height: 70%;
+    width: 65%;
+    /* border-style: solid; */
+    margin-left: 1%;
+}
+
+.music_delete_box {
+    height: 23%;
+    width: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-style: solid;
+    margin-left: 7%;
+    border-radius: 10px;
+    border-width: 2px;
+    font-size: 10px;
+    opacity: 0%;
+    z-index: 2;
+
+}
+
+.music_item:hover .music_delete_box {
+    opacity: 100%;
+}
+
+.music_delete_box:hover {
+    transform: scale(1.2,1.2);
+    transition-duration: 0.5s;
+    background: rgb(80,80,80);
+    border-color: rgb(80,80,80);
+    color: white;
+}
+
+.music_delete_box button {
+    position: absolute;
+    height: 2%;
+    width: 2%;
+    z-index: 3;
+    opacity: 0%;
+}
+
+.logout_box {
+    position: absolute;
+    height: 50px;
+    width: 100px;
+    right: 3%;
+    bottom: 4%;
+    border-style: solid;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.logout_box:hover {
+    transform: scale(1.2,1.2);
+    transition-duration: 0.5s;
+    background: rgb(80,80,80);
+    border-color: rgb(80,80,80);
+    color: white;
+}
+
+.logout_box button {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    opacity: 0%;
+}
