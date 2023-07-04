@@ -134,10 +134,3 @@ def music_item_del(request, id):
 
         return Response('This music item has been deleted')
     
-
-# @api_view(['GET'])
-# def yt_data_get(request):
-# 
-#         yt_json = get_youtube_json()
-#         
-#         return HttpResponse(yt_json['items'][0]['snippet']['title'])
