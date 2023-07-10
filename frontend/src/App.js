@@ -18,10 +18,9 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path='/login' element={<Loginpage />} />
+        <Route exact path='/login' element={<Loginpage />} />
         <Route path='/' element={<Header />} />
         <Route path='/library/' element={<Librarypage />} />
-        {/* <Route path='/library/homepage' element={<Librarypage_homepage />} /> */}
       </Routes>
     </Router>
   );

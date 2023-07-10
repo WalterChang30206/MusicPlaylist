@@ -9,11 +9,14 @@ import Modal_music_item_del from '../components/Modal_music_item_del'
 
 const Librarypage = () => {
 
+// environment variable
+    const root_url = process.env.REACT_APP_ROOT_URL
+
 // 確保用戶在登出之後，不能夠隨意進入這個頁面 ( 因為 localStorage 內部關於登入的資訊都被清空了，我要把他們送回 login page )
 
     if (localStorage.getItem('oauth2-test-params') && localStorage.getItem('user_email') ) {
     } else {
-        window.location.assign('http://localhost:3000/login/')
+        window.location.assign(root_url + 'login/')
     }
 
     let access_token = JSON.parse(localStorage.getItem('oauth2-test-params'))['access_token']
@@ -144,7 +147,7 @@ const Librarypage = () => {
         // 無論我們是誰，都需要清空 localStorage 裡面的資訊，因為在這個 app 裡面是依據 localStorage 內部存放的資訊來辨別用戶身分；清除 localStorage 後再將用戶導回 login page
         localStorage.removeItem('oauth2-test-params')
         localStorage.removeItem('user_email')
-        window.location.assign('http://localhost:3000/login/')
+        window.location.assign(root_url + 'login/')
     }
 
     

@@ -6,6 +6,10 @@ import React , {useState} from 'react'
 
 const Header = () => {
 
+  // environment variable
+  const root_url = process.env.REACT_APP_ROOT_URL
+
+  // 擷取上方的 url，並且只取#後方的文字
   var fragmentString = window.location.hash.substring(1);
 
 
@@ -23,7 +27,7 @@ const Header = () => {
       checkToken();
   }
   } else {
-    window.location.assign('http://localhost:3000/login')
+    window.location.assign(root_url + 'login/')
   }
 
   // 求取使用者資訊的目的有兩個：
@@ -49,7 +53,7 @@ const Header = () => {
           console.log(response_json['user']['emailAddress']);
 
         } else if (xhr.readyState === 4 && xhr.status === 401) {
-          window.location.assign('http://localhost:3000/login')
+          window.location.assign(root_url + 'login/')
         }
       };
       xhr.send(null)
@@ -73,13 +77,13 @@ const Header = () => {
       .then(({done,value}) => {
         let result = JSON.parse(textDecoder.decode(value))['user']['emailAddress'];
         localStorage.setItem('user_email', result)
-        window.location.assign('http://localhost:3000/library')
+        window.location.assign(root_url + 'library/')
       })
       
       
     } else if (response.status === 401) {
       localStorage.removeItem('user_email')
-      window.location.assign('http://localhost:3000/login')
+      window.location.assign(root_url + 'login/')
     }
     }
   }
