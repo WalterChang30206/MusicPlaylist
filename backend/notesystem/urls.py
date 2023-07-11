@@ -8,7 +8,6 @@ urlpatterns = [
     path('library/upd_del/<int:id>/',views.library_ud, name='library_ud'),
     path('music_item/get/',views.music_item_get, name='music_item_get'),
     path('music_item/del/<int:id>/',views.music_item_del, name='music_item_del'),
-    path('yt_test/',views.yt_data_get, name='yt_data_get'),
 ]
 
     # path('<int:video_id>/',views.note, name='note'),
