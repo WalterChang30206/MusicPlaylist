@@ -9,7 +9,7 @@ import Loginpage from './pages/Loginpage'
 import {
   BrowserRouter as Router,
   Routes,
-  Route
+  Route,
 } from "react-router-dom";
 
 
