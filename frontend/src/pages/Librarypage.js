@@ -11,6 +11,7 @@ const Librarypage = () => {
 
 // environment variable
     const root_url = process.env.REACT_APP_ROOT_URL
+    const api_url = process.env.API_URL
 
 // 確保用戶在登出之後，不能夠隨意進入這個頁面 ( 因為 localStorage 內部關於登入的資訊都被清空了，我要把他們送回 login page )
 
@@ -62,7 +63,7 @@ const Librarypage = () => {
 
     let getLib_list = async () => {
   
-        let response = await fetch('http://127.0.0.1:8000/api/library/' + user_email + '/')
+        let response = await fetch( api_url + '/library/' + user_email )
         let data = await response.json()
 
         setLib_list(data)
@@ -84,7 +85,7 @@ const Librarypage = () => {
         // 先讓這個東西得到 focus
 
         
-        let new_url = 'http://127.0.0.1:8000/api/music_item/get/?playlist_name=' + item.playlist_name
+        let new_url = api_url + '/music_item/get/?playlist_name=' + item.playlist_name
 
         let response = await fetch(new_url)
         let data = await response.json()

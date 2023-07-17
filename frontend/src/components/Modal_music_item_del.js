@@ -2,11 +2,13 @@ import React from 'react'
 
 const Modal_music_item_del = ({modal_state,closemodal}) => {
 
+  const api_url = process.env.API_URL
+
   const handleSubmit = async (e) => {
 
     e.preventDefault()
     
-    try { const response = await fetch('http://127.0.0.1:8000/api/music_item/del/' + modal_state[1] +'/', {
+    try { const response = await fetch( api_url + '/music_item/del/' + modal_state[1] +'/', {
       method: 'DELETE',
       headers: {
         'Content-type': 'application/json',

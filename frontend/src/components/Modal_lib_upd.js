@@ -2,6 +2,8 @@ import React from 'react'
 
 const Modal_lib_upd = ({playlist_id , closemodal}) => {
 
+  const api_url = process.env.API_URL
+
   const handleSubmit = async (e) => {
 
     e.preventDefault()
@@ -13,7 +15,7 @@ const Modal_lib_upd = ({playlist_id , closemodal}) => {
     console.log(playlist_id)
     const requestJson = JSON.stringify(requestData)
 
-    try { const response = await fetch("http://127.0.0.1:8000/api/library/upd_del/" + playlist_id + "/",
+    try { const response = await fetch( api_url + "/library/upd_del/" + playlist_id + "/",
     {
       method: 'PUT',
       headers: {

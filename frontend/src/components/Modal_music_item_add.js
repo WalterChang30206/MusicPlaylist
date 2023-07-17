@@ -2,6 +2,8 @@ import React from 'react'
 
 const Modal_music_item_add = ({playlist_name , closemodal}) => {
 
+  const api_url = process.env.API_URL
+
   const handleSubmit = async (e) => {
 
     e.preventDefault()
@@ -15,7 +17,7 @@ const Modal_music_item_add = ({playlist_name , closemodal}) => {
 
     const requestJson = JSON.stringify(requestData);
 
-    try { const response = await fetch('http://127.0.0.1:8000/api/music_item/get/', {
+    try { const response = await fetch( api_url + '/music_item/get/', {
       method: 'POST',
       headers: {
         'Content-type': 'application/json',

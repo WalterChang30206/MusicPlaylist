@@ -3,6 +3,8 @@ import React from 'react'
 
 const Modal_lib_add = ({closemodal , setLib_list}) => {
 
+  const api_url = process.env.API_URL
+
   const handleSubmit = async (e) => {
 
     e.preventDefault()
@@ -15,7 +17,7 @@ const Modal_lib_add = ({closemodal , setLib_list}) => {
     const user_email = localStorage.getItem('user_email')
 
 
-    try { const response = await fetch("http://127.0.0.1:8000/api/library/" + user_email + '/', {
+    try { const response = await fetch( api_url + "/library/" + user_email + '/', {
       method: 'POST',
       headers: {
         'Content-type': 'application/json',

@@ -6,6 +6,7 @@ function Loginpage() {
 
     // environment variable
     let root_url = process.env.REACT_APP_ROOT_URL
+    let api_url = process.env.API_URL
 
     let [my_client_id,setMy_client_id] = useState('')
 
@@ -24,7 +25,7 @@ function Loginpage() {
     // client_id 是我需要秘密保管的 key，所以我把他藏在後端 server 裡面
     async function get_client_id() {
 
-        let client_id = await fetch('http://127.0.0.1:8000/api/client_id/');
+        let client_id = await fetch(api_url + '/client_id');
         let data = await client_id.json();
         let result = await data['client_id'];
         setMy_client_id(result)
