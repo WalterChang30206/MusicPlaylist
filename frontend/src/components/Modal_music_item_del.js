@@ -2,7 +2,7 @@ import React from 'react'
 
 const Modal_music_item_del = ({modal_state,closemodal}) => {
 
-  const api_url = process.env.API_URL
+  const api_url = process.env.REACT_APP_API_URL
 
   const handleSubmit = async (e) => {
 
