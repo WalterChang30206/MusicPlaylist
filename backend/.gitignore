@@ -1,3 +1,5 @@
 .env
 django-env
 db.sqlite3
+uwsgi.ini
+uwsgi_params
