@@ -5,8 +5,8 @@ import React ,{useState, useEffect} from 'react'
 function Loginpage() {
 
     // environment variable
-    let root_url = process.env.REACT_APP_ROOT_URL
-    let api_url = process.env.API_URL
+    const root_url = process.env.REACT_APP_ROOT_URL
+    const api_url = process.env.REACT_APP_API_URL
 
     let [my_client_id,setMy_client_id] = useState('')
 
@@ -30,8 +30,6 @@ function Loginpage() {
         let result = await data['client_id'];
         setMy_client_id(result)
     }
-    
-    console.log(my_client_id)
 
     function oauthSignIn() {
         
