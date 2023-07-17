@@ -16,7 +16,7 @@ const Librarypage = () => {
 
     if (localStorage.getItem('oauth2-test-params') && localStorage.getItem('user_email') ) {
     } else {
-        window.location.assign(root_url + 'login/')
+        window.location.assign(root_url + '/login')
     }
 
     let access_token = JSON.parse(localStorage.getItem('oauth2-test-params'))['access_token']
@@ -147,7 +147,7 @@ const Librarypage = () => {
         // 無論我們是誰，都需要清空 localStorage 裡面的資訊，因為在這個 app 裡面是依據 localStorage 內部存放的資訊來辨別用戶身分；清除 localStorage 後再將用戶導回 login page
         localStorage.removeItem('oauth2-test-params')
         localStorage.removeItem('user_email')
-        window.location.assign(root_url + 'login/')
+        window.location.assign(root_url + '/login')
     }
 
     

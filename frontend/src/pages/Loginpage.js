@@ -13,7 +13,7 @@ function Loginpage() {
 
     // 利用 localStorage 裡面的東西，來嘗試自動登入
     if (localStorage.getItem('oauth2-test-params') && localStorage.getItem('user_email') ) {
-        window.location.assign(root_url + 'library/')
+        window.location.assign(root_url + '/library')
     }
     
     // 渲染網頁
@@ -30,6 +30,8 @@ function Loginpage() {
         setMy_client_id(result)
     }
     
+    console.log(my_client_id)
+
     function oauthSignIn() {
         
         // 一些等一下會用到的基本資訊，像是第三方api目標位址、自己帶有的 OAuth ID
@@ -70,7 +72,7 @@ function Loginpage() {
         let pseudo_params = {'access_token':"visitor_token"}
         localStorage.setItem('oauth2-test-params', JSON.stringify(pseudo_params))
         localStorage.setItem('user_email','visitor@audionote.com')
-        window.location.assign(root_url + 'login/')
+        window.location.assign(root_url + '/login')
     }
 
     return (

@@ -4,7 +4,7 @@ import React , {useState} from 'react'
 
 // 我試著製造一個要傳給 librarypage.js 的 global variavle => user_email
 
-const Header = () => {
+const Home = () => {
 
   // environment variable
   const root_url = process.env.REACT_APP_ROOT_URL
@@ -27,7 +27,7 @@ const Header = () => {
       checkToken();
   }
   } else {
-    window.location.assign(root_url + 'login/')
+    window.location.assign(root_url + '/login')
   }
 
   // 求取使用者資訊的目的有兩個：
@@ -53,7 +53,7 @@ const Header = () => {
           console.log(response_json['user']['emailAddress']);
 
         } else if (xhr.readyState === 4 && xhr.status === 401) {
-          window.location.assign(root_url + 'login/')
+          window.location.assign(root_url + '/login')
         }
       };
       xhr.send(null)
@@ -77,13 +77,13 @@ const Header = () => {
       .then(({done,value}) => {
         let result = JSON.parse(textDecoder.decode(value))['user']['emailAddress'];
         localStorage.setItem('user_email', result)
-        window.location.assign(root_url + 'library/')
+        window.location.assign(root_url + '/library')
       })
       
       
     } else if (response.status === 401) {
       localStorage.removeItem('user_email')
-      window.location.assign(root_url + 'login/')
+      window.location.assign(root_url + '/login')
     }
     }
   }
@@ -97,4 +97,4 @@ const Header = () => {
   )
 }
 
-export default Header;
+export default Home;
