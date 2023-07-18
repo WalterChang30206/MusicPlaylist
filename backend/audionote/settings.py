@@ -28,7 +28,7 @@ KEY_YOUTUBE_DATA_API = os.environ.get('KEY_YOUTUBE_DATA_API')
 PW_MYSQL = os.environ.get('PW_MYSQL')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['52.198.101.223', '127.0.0.1', 'localhost']
 
@@ -149,7 +149,8 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_ALL_ORIGINS = False
+    
 
 # CORS_ALLOWED_ORIGINS : [
 #     "http://localhost:3306",
