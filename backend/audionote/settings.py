@@ -30,7 +30,7 @@ PW_MYSQL = os.environ.get('PW_MYSQL')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['52.198.101.223', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['www.audionote.tw']
 
 
 # Application definition
