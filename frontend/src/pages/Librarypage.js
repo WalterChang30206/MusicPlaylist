@@ -65,7 +65,7 @@ const Librarypage = () => {
   
         let response = await fetch( api_url + '/library/' + user_email )
         let data = await response.json()
-
+        console.log(api_url + '/library/' + user_email)
         setLib_list(data)
     }
 
