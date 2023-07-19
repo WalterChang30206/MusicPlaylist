@@ -10,8 +10,7 @@ import {root_url , api_url } from '../environment.js'
 const Librarypage = () => {
 
 // environment variable
-    const root_url = 'http://localhost:3000'
-    const api_url = 'http://www.audionote.tw/api'
+
 
 // 確保用戶在登出之後，不能夠隨意進入這個頁面 ( 因為 localStorage 內部關於登入的資訊都被清空了，我要把他們送回 login page )
 
