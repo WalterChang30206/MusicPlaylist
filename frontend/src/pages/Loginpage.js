@@ -72,7 +72,7 @@ function Loginpage() {
         let pseudo_params = {'access_token':"visitor_token"}
         localStorage.setItem('oauth2-test-params', JSON.stringify(pseudo_params))
         localStorage.setItem('user_email','visitor@audionote.com')
-        
+        window.location.assign(root_url + '/library')
     }
 
     return (

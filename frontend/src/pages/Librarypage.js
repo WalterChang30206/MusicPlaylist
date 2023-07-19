@@ -14,10 +14,10 @@ const Librarypage = () => {
 
 // 確保用戶在登出之後，不能夠隨意進入這個頁面 ( 因為 localStorage 內部關於登入的資訊都被清空了，我要把他們送回 login page )
 
-    // if (localStorage.getItem('oauth2-test-params') && localStorage.getItem('user_email') ) {
-    // } else {
-    //     window.location.assign(root_url + '/login')
-    // }
+    if (localStorage.getItem('oauth2-test-params') && localStorage.getItem('user_email') ) {
+    } else {
+        window.location.assign(root_url + '/login')
+    }
 
     let access_token = JSON.parse(localStorage.getItem('oauth2-test-params'))['access_token']
     let user_email = localStorage.getItem('user_email')
