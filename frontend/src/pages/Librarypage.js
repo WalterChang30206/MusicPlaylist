@@ -23,6 +23,7 @@ const Librarypage = () => {
     let access_token = JSON.parse(localStorage.getItem('oauth2-test-params'))['access_token']
     let user_email = localStorage.getItem('user_email')
     
+    
 
 // 與 useState , selected_lib_music 一起使用的一個常數
 // 當我還沒點選 playlist item 的時候，我選擇讓我在頁面右側顯示出警語 -> 因為這個是預設好的，必須要早於 useState 使用這個常數之前創立
@@ -63,9 +64,9 @@ const Librarypage = () => {
 
     let getLib_list = async () => {
   
-        let response = await fetch( api_url + '/library/' + user_email )
+        let response = await fetch( 'https://www.audionote.tw/api/library/' + user_email )
         let data = await response.json()
-        console.log(api_url + '/library/' + user_email)
+
         setLib_list(data)
     }
 
