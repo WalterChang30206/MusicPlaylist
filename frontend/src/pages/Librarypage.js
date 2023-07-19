@@ -4,21 +4,21 @@ import Modal_lib_del from '../components/Modal_lib_del'
 import Modal_lib_add from '../components/Modal_lib_add'
 import Modal_music_item_add from '../components/Modal_music_item_add'
 import Modal_music_item_del from '../components/Modal_music_item_del'
-
+import {root_url , api_url } from '../environment.js'
 
 
 const Librarypage = () => {
 
 // environment variable
-    const root_url = process.env.REACT_APP_ROOT_URL
-    const api_url = process.env.REACT_APP_API_URL
+    const root_url = 'http://localhost:3000'
+    const api_url = 'http://www.audionote.tw/api'
 
 // 確保用戶在登出之後，不能夠隨意進入這個頁面 ( 因為 localStorage 內部關於登入的資訊都被清空了，我要把他們送回 login page )
 
-    if (localStorage.getItem('oauth2-test-params') && localStorage.getItem('user_email') ) {
-    } else {
-        window.location.assign(root_url + '/login')
-    }
+    // if (localStorage.getItem('oauth2-test-params') && localStorage.getItem('user_email') ) {
+    // } else {
+    //     window.location.assign(root_url + '/login')
+    // }
 
     let access_token = JSON.parse(localStorage.getItem('oauth2-test-params'))['access_token']
     let user_email = localStorage.getItem('user_email')

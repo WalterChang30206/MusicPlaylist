@@ -1,9 +1,7 @@
 import React from 'react'
-
+import { api_url } from '../environment.js'
 
 const Modal_lib_add = ({closemodal , setLib_list}) => {
-
-  const api_url = process.env.REACT_APP_API_URL
 
   const handleSubmit = async (e) => {
 

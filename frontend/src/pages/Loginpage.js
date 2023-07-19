@@ -1,21 +1,20 @@
 import React ,{useState, useEffect} from 'react'
-
+import {root_url , api_url } from '../environment.js'
 
 
 function Loginpage() {
 
     // environment variable
-    const root_url = process.env.REACT_APP_ROOT_URL
-    const api_url = process.env.REACT_APP_API_URL
+    console.log(root_url)
 
     let [my_client_id,setMy_client_id] = useState('')
 
     const google_icon_url = 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png'
 
     // 利用 localStorage 裡面的東西，來嘗試自動登入
-    if (localStorage.getItem('oauth2-test-params') && localStorage.getItem('user_email') ) {
-        window.location.assign(root_url + '/library')
-    }
+    // if (localStorage.getItem('oauth2-test-params') && localStorage.getItem('user_email') ) {
+    //     window.location.assign(root_url + '/library')
+    // }
     
     // 渲染網頁
     useEffect( () => {
@@ -25,10 +24,12 @@ function Loginpage() {
     // client_id 是我需要秘密保管的 key，所以我把他藏在後端 server 裡面
     async function get_client_id() {
 
-        let client_id = await fetch(api_url + '/client_id');
+        let client_id = await fetch( api_url + '/client_id');
+        
         let data = await client_id.json();
         let result = await data['client_id'];
-        setMy_client_id(result)
+        setMy_client_id(result);
+
     }
 
     function oauthSignIn() {

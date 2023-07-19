@@ -1,8 +1,7 @@
 import React from 'react'
+import { api_url } from '../environment.js'
 
 const Modal_lib_del = ({selected_lib , playlist_id , closemodal}) => {
-
-  const api_url = process.env.REACT_APP_API_URL
 
   const handleSubmit = async (e) => {
 

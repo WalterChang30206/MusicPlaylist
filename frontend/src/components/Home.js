@@ -1,5 +1,5 @@
 import React , {useState} from 'react'
-
+import {root_url } from '../environment.js'
 
 
 // 我試著製造一個要傳給 librarypage.js 的 global variavle => user_email
@@ -7,7 +7,6 @@ import React , {useState} from 'react'
 const Home = () => {
 
   // environment variable
-  const root_url = process.env.REACT_APP_ROOT_URL
 
   // 擷取上方的 url，並且只取#後方的文字
   var fragmentString = window.location.hash.substring(1);
