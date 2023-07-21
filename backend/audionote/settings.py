@@ -28,7 +28,7 @@ KEY_YOUTUBE_DATA_API = os.environ.get('KEY_YOUTUBE_DATA_API')
 PW_MYSQL = os.environ.get('PW_MYSQL')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['www.audionote.tw' , '127.0.0.1']
 
