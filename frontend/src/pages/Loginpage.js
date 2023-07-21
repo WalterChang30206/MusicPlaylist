@@ -33,7 +33,7 @@ function Loginpage() {
     }
 
     function oauthSignIn() {
-        
+
         // 一些等一下會用到的基本資訊，像是第三方api目標位址、自己帶有的 OAuth ID
         var oauth2Endpoint = 'https://accounts.google.com/o/oauth2/v2/auth';
     
@@ -60,11 +60,18 @@ function Loginpage() {
             input.setAttribute('value', params[p]);
             form.appendChild(input);
         };
-
+        
         // 把前面預先創建好的 form，放進 html body 裡面，實際把整個 form 表單傳送出去
         document.body.appendChild(form);
-        form.submit();
+        
+        // form.submit();
 
+        // 由於 google OAuth 2.0 仍在驗證中，我需要告知用戶我這項功能尚未完成，要引導他們到影片參考如何使用
+        const a = async() => {
+            await alert('Google OAuth 2.0 still confirming by google , not allowed to activate this function right now, please take a look at the example below')
+            form.submit();
+        }
+        a()
     }
 
     // 訪客登入
@@ -73,6 +80,11 @@ function Loginpage() {
         localStorage.setItem('oauth2-test-params', JSON.stringify(pseudo_params))
         localStorage.setItem('user_email','visitor@audionote.com')
         window.location.assign(root_url + '/library')
+    }
+
+    // Google OAuth 2.0 仍在驗證中，所以我要提供 example video 的連結
+    function example() {
+        window.open('https://www.youtube.com/watch?v=zbaca11GPRI')
     }
 
     return (
@@ -86,8 +98,11 @@ function Loginpage() {
                         Log in with Google
                         </div>
                 </div>
-                <div id='login_visitorButton'  >
+                <div  id='login_visitorButton'  >
                     <div style={{cursor: 'pointer'}} onClick={visitor_login}>Log in as Visitor</div>
+                </div>
+                <div id='example_link'  >
+                    <div style={{cursor: 'pointer'}} onClick={example}>example link</div>
                 </div>
             </div>
         </div>

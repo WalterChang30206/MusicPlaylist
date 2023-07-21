@@ -63,7 +63,7 @@ const Librarypage = () => {
 
     let getLib_list = async () => {
   
-        let response = await fetch( 'https://www.audionote.tw/api/library/' + user_email )
+        let response = await fetch(  api_url + '/library/' + user_email )
         let data = await response.json()
 
         setLib_list(data)
@@ -129,7 +129,11 @@ const Librarypage = () => {
             return true
         }
     }
-    
+    // const vis_auth = () => {
+    //     if (user_email == 'visitor@audionote.com') {
+    //         return true
+    //     }
+    // }
 
 // 製作一個撤銷 token 的登出按鈕，同時，因為訪客並沒有向 google 申請 token，而是在一樣的 localStorage 位置上塞入我給的 pseudo data，所以登出按鈕也會根據身分做出不一樣的行為
     async function logout () {

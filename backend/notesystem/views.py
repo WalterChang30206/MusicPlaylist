@@ -106,11 +106,16 @@ def music_item_get(request):
 
         # 從前端那裡傳過來的 url 有兩種，一個是純粹後面帶
         audio_urls_all = request.data['audio_urls']
-        audio_urls = audio_urls_all.split('&')[0]
 
-        regex = re.compile(r"(www.youtube.com\/watch\?v=)(.+&)")
-        m = regex.search(audio_urls_all)
-        video_id = m.group(2).split('&')[0]
+        try:
+            audio_urls = audio_urls_all.split('&')[0]
+            regex = re.compile(r"(www.youtube.com\/watch\?v=)(.+&)")
+            m = regex.search(audio_urls_all)
+            video_id = m.group(2).split('&')[0]
+        except:
+            regex = re.compile(r"(www.youtube.com\/watch\?v=)(.+)")
+            m = regex.search(audio_urls_all)
+            video_id = m.group(2)
 
         yt_json = get_youtube_json(video_id)
         audio_name = yt_json['items'][0]['snippet']['title']

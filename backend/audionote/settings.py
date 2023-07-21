@@ -30,7 +30,7 @@ PW_MYSQL = os.environ.get('PW_MYSQL')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['www.audionote.tw']
+ALLOWED_HOSTS = ['www.audionote.tw' , '127.0.0.1']
 
 
 # Application definition
@@ -151,6 +151,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ALLOWED_ORIGINS = [
     'https://www.audionote.tw',
+    'http://localhost:3000',
 ]
     
 
