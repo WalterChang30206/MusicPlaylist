@@ -122,12 +122,13 @@ const Librarypage = () => {
 // 用來辨別身分，如果是訪客，就把這些按鈕給鎖住，使訪客沒辦法進行增刪修改的操作
     const vis_auth = () => {
 
-        if (user_email == 'visitor@audionote.com') {
-            alert('you\'ve logged in as a visitor\nnot allowed to take this operation' )
-            return false
-        } else {
-            return true
-        }
+        // if (user_email == 'visitor@audionote.com') {
+        //     alert('you\'ve logged in as a visitor\nnot allowed to take this operation' )
+        //     return false
+        // } else {
+        //     return true
+        // }
+        return true
     }
     // const vis_auth = () => {
     //     if (user_email == 'visitor@audionote.com') {
@@ -174,7 +175,10 @@ const Librarypage = () => {
                         </button>
                     </div>
                 </div>
-                {selected_lib_music_item}
+                <div className='playlist_music_box'>
+                    {selected_lib_music_item}
+                </div>
+                
             </div>
             <div className='logout_box' onClick={logout}>
                 logout
@@ -216,7 +220,9 @@ const Lib_list_box = ({setModal_state_upd , setModal_state_del , setModal_state_
                     </button>
                 </div>                                    
             </div>
-            {library_list}
+            <div className='lib_list_item_box'>
+                {library_list}
+            </div>
         </nav>
     )
 }
